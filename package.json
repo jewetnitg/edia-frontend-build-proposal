@@ -1,0 +1,58 @@
+{
+  "name": "edia-frontend-build-proposal",
+  "version": "0.0.1",
+  "description": "A boilerplate for frontend projects based on gulp, browserify, karma, mocha and chai. Intended as a candidate for the frontend boilerplate for future EDIA projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jewetnitg@github.com/jewetnitg/edia-frontend-build-proposal.git"
+  },
+  "author": "EDIA",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jewetnitg/edia-frontend-build-proposal/issues"
+  },
+  "homepage": "https://github.com/jewetnitg/edia-frontend-build-proposal#readme",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "browserify-istanbul": "^0.2.1",
+    "chai": "^3.5.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-eslint": "^1.1.1",
+    "gulp-gzip": "^1.2.0",
+    "gulp-less": "^3.0.5",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-shell": "^0.5.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tar": "^1.8.0",
+    "gulp-util": "^3.0.7",
+    "include-all": "^0.1.6",
+    "jsdoc": "^3.4.0",
+    "jsdoc-oblivion": "0.0.4",
+    "karma": "^0.13.19",
+    "karma-browserify": "^5.0.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-html-reporter": "^0.2.7",
+    "karma-mocha": "^0.2.1",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-spec-reporter": "0.0.23",
+    "mocha": "^2.4.5",
+    "run-sequence": "^1.1.5",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0",
+    "yargs": "^3.32.0"
+  },
+  "dependencies": {
+    "lodash": "^4.1.0"
+  }
+}

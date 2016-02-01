@@ -1,0 +1,35 @@
+{
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": [
+      "jsdoc",
+      "closure"
+    ]
+  },
+  "source": {
+    "includePattern": ".+\\.js(doc)?$",
+    "excludePattern": ""
+  },
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true
+    },
+    "systemName": "edia-frontend-build-proposal",
+    "footer": "",
+    "copyright": "EDIA 2016",
+    "navType": "vertical",
+    "theme": "oblivion",
+    "linenums": true,
+    "collapseSymbols": false,
+    "inverseNav": true
+  },
+  "opts": {
+    "encoding": "utf8",
+    "destination": "./build/docs",
+    "template": "./node_modules/jsdoc-oblivion/template",
+    "recurse": true,
+    "tutorials": "./docs"
+  }
+}
