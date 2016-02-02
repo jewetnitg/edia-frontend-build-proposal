@@ -16,30 +16,31 @@ if you would like to run the build without having gulp installed globally, you c
 The boilerplate directory hierarchy looks like this
 
 ```
-    ./
-      ./src
-        ./js
-          ./config
-          ./api
-          ./lib
-          ./main.js - the javascript entry point
-        ./templates - templates, (react / handlebars / ...)
-        ./fonts - font files
-        ./images - image files
-        ./styles - style files
-          ./importer.less - main less file, this should import all required less files
-        index.html - the index.html of the project, the entry point 
-      ./tasks - gulp tasks
-      ./docs - tutorials etc.
-      ./build - automatically generated files, the built project and documentation
-        ./coverage - coverage output
-        ./docs - the generated documentation
-        ./dst - the built project
-        ./build.tar.gz - the ./build/dst directory, put in an archive
-    ./package.json - configuration for the projects dependencies
-    ./karma.conf.js - configuration for karma, the test runner
-    ./jsdoc.conf.json - configuration for generation of documentation
-    ./README.js - the file you are looking at right now
+.
++-- src
+|   +-- js
+|       +-- config
+|       +-- api
+|       +-- lib
+|       +-- main.js // the javascript entry point
+|   +-- templates // templates, (react / handlebars / ...)
+|   +-- fonts // font files
+|   +-- images // image files
+|   +-- styles // style files
+|       +-- importer.less // main less file, this should import all required less files
+|   +-- index.html // the index.html of the project, the entry point 
++-- tasks // gulp tasks
++-- docs // tutorials etc.
++-- build // automatically generated files, the built project and documentation
+|   +-- coverage // coverage output
+|   +-- docs // the generated documentation
+|   +-- dst // the built project
+|   +-- build.tar.gz // the ./build/dst directory, put in an archive
++-- package.json // configuration for the projects dependencies
++-- karma.conf.js // configuration for karma, the test runner
++-- build.config.js // configuration for the gulp build
++-- jsdoc.conf.json // configuration for generation of documentation
++-- README.js // the file you are looking at right now
 ```
 
 
