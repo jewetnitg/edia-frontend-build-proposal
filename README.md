@@ -51,7 +51,12 @@ The boilerplate directory hierarchy looks like this
  - less transpilation
  - dev server with livereload
  - testing using karma, mocha and chai
- 
+  
+# TODOs
+  - improve jsdoc and dependo tasks, do not to use gulp-shell, this should decrease build time
+  - choose frameworks and libraries
+  - es5 vs. es6
+  
 # Possible improvements
  - Publish markdown documentation to confluence using the [confluence-api](https://www.npmjs.com/package/confluence-api) npm package, research whether the [confluence markdown plugin](https://marketplace.atlassian.com/plugins/org.swift.confluence.markdown/server/overview)  will allow us to achieve this. 
    Also take a look at the [jsdoc-to-markdown](https://www.npmjs.com/package/jsdoc-to-markdown) npm module, which might allow us to publish jsdoc documentation to confluence as well.  

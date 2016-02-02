@@ -27,6 +27,9 @@ var buildConfig = {
     "build:prod": [
       "assets",
 
+      // lint javascript
+      "eslint",
+
       // run tests once
       "test",
 

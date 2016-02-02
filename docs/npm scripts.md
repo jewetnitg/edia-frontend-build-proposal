@@ -1,5 +1,3 @@
-# npm scripts
-
 The following npm scripts are available, for information on what gulp tasks do, please refer to the {@link build.tasks} documentation.
 You don't need to have gulp installed globally for these to work, as they use the local gulp executable.
 
