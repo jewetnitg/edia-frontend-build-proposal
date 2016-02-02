@@ -10,10 +10,20 @@ var sourcemaps = require('gulp-sourcemaps');
 
 module.exports = function (gulp) {
 
+  /**
+   * Browserifies the project and uglifies, watches for any source changes and re-bundles them when they occur.
+   * @name browserify:prod
+   * @memberof build.tasks
+   */
   gulp.task('browserify:prod', function () {
     doBrowserify('prod');
   });
 
+  /**
+   * Browserifies the project and generates sourcemaps, watches for any source changes and re-bundles them when they occur.
+   * @name browserify:dev
+   * @memberof build.tasks
+   */
   gulp.task('browserify:dev', function () {
     doBrowserify('dev');
   });

@@ -1,13 +1,29 @@
+/**
+ * The build configuration
+ * @namespace build.config
+ * @memberof build
+ * @property tasksDir {String} - the directory in which the tasks are located, tasks are looked for recursively, if a module is found that exports a function, it is treated as a task.
+ * @property defaultTask {String} - default task to run, eg. this task is ran when running gulp without a task
+ * @property tasks {Object<Array>} - an object containing arrays with task sequences, i.e. ```{"build": ["clean", "copy"]}```.
+ */
+
 var buildConfig = {
 
-  // directory in which the tasks are located, tasks may be nested under directories
   tasksDir: "./tasks",
-
-  // default task to run, eg. this task is ran when running gulp without a task
   defaultTask: "build",
 
+  /**
+   * All gulp tasks and sequences.
+   * @memberof build
+   * @namespace build.tasks
+   */
   tasks: {
 
+    /**
+     * The production build, runs {@link build.tasks.assets}, {@link build.tasks.test}, {@link build.tasks.browserify:prod}, {@link build.tasks.jsdoc} and {@link build.tasks.tar}.
+     * @name build:prod
+     * @memberof build.tasks
+     */
     "build:prod": [
       "assets",
 
@@ -24,6 +40,11 @@ var buildConfig = {
       "tar"
     ],
 
+    /**
+     * The development build, runs {@link build.tasks.assets} and {@link build.tasks.browserify:dev}.
+     * @name build:dev
+     * @memberof build.tasks
+     */
     "build:dev": [
       "assets",
 
@@ -32,6 +53,11 @@ var buildConfig = {
 
     ],
 
+    /**
+     * Cleans the build directory using {@link build.tasks.clean}, copies static assets using {@link build.tasks.copy} and transpiles less to css using {@link build.tasks.less}.
+     * @name assets
+     * @memberof build.tasks
+     */
     "assets": [
       // clean build dir
       "clean",
@@ -43,6 +69,12 @@ var buildConfig = {
       "less"
     ],
 
+    /**
+     * Builds the project and serves it, watches for file changes and propagates them to the server, also triggers livereload to reload.
+     * It runs the {@link build.tasks.build:dev}, {@link build.tasks.watch} and {@Link build.tasks.devserver} tasks to do so.
+     * @name dev
+     * @memberof build.tasks
+     */
     "dev": [
       // build the project
       "build:dev",

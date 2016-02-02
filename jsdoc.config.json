@@ -7,8 +7,14 @@
     ]
   },
   "source": {
-    "includePattern": ".+\\.js(doc)?$",
-    "excludePattern": "node_modules"
+    "include": [
+      "build.config.js",
+      "gulpfile.js",
+      "index.js",
+      "karma.conf.js",
+      "src",
+      "tasks"
+    ]
   },
   "templates": {
     "cleverLinks": true,
@@ -25,12 +31,15 @@
     "collapseSymbols": false,
     "inverseNav": true
   },
-  "plugins": ["plugins/markdown"],
+  "plugins": [
+    "plugins/markdown"
+  ],
   "opts": {
     "encoding": "utf8",
     "destination": "./build/docs",
     "template": "./node_modules/jsdoc-oblivion/template",
     "recurse": true,
+    "readme": "./README.md",
     "tutorials": "./docs"
   }
 }

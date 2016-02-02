@@ -1,3 +1,8 @@
+/**
+ * The build is done using Gulp, the gulpfile in the root of the project loads all tasks from the directory configured in the {@link build.config} using the tasksDir property.
+ * @namespace build
+ */
+
 var gulp = require('gulp');
 var _ = require('lodash');
 var gulpLoadPlugins = require('gulp-load-plugins');
