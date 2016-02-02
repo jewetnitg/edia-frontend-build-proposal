@@ -8,21 +8,48 @@ var buildConfig = {
 
   tasks: {
 
-    "build": [
-      // clean build dir
-      "clean",
+    "build:prod": [
+      "assets",
 
       // run tests once
       "test",
 
       // run browserify
-      "browserify",
+      "browserify:prod",
 
       // create documentation
       "jsdoc",
 
       // put the build in an archive
       "tar"
+    ],
+
+    "build:dev": [
+      "assets",
+
+      // run browserify
+      "browserify:dev"
+
+    ],
+
+    "assets": [
+      // clean build dir
+      "clean",
+
+      // copy static assets
+      "copy",
+
+      // transpile less to css
+      "less"
+    ],
+
+    "dev": [
+      // build the project
+      "build:dev",
+      // watch for changes
+      "watch",
+      // serve the built project
+      "devserver"
     ]
 
   }

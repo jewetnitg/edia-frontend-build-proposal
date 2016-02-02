@@ -8,6 +8,9 @@ var _ = require('lodash');
 var superCoolApplication = {
   thisIsTheOnlyThingICanDo: function (value) {
     return value;
+  },
+  someUntestedFunctionThatDoesTheExactSameThing: function (value) {
+    return value;
   }
 };
 
