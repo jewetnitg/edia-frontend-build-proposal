@@ -8,7 +8,7 @@ Please note that you need to have nodejs installed on your system.
 # Building
 Building the project is done though gulp, to build the project run ```gulp build```.
 
-for more information on the build, please refer to the {@tutorial build} documentation.
+for more information on the build, please refer to the {@link build} documentation.
 Please note that you need to have gulp installed globally (using ```npm i gulp -g```) for this to work,
 if you would like to run the build without having gulp installed globally, you can use the {@tutorial npm scripts} for this, as they use the local gulp executable.
 
@@ -39,7 +39,7 @@ The boilerplate directory hierarchy looks like this
     ./package.json - configuration for the projects dependencies
     ./karma.conf.js - configuration for karma, the test runner
     ./jsdoc.conf.json - configuration for generation of documentation
-    ./README.js - this file
+    ./README.js - the file you are looking at right now
 ```
 
 
