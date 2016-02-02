@@ -88,6 +88,17 @@ var buildConfig = {
       "watch",
       // serve the built project
       "devserver"
+    ],
+
+    /**
+     * Generates documentation and watches for changes, re-generates it if files change,
+     * also runs a server that serves the documentation and uses livereload to reload when the generated documentation changes.
+     * @name jsdoc:live
+     * @memberof build.tasks
+     */
+    "jsdoc:live": [
+      "jsdoc:watch",
+      "docserver"
     ]
 
   }
