@@ -8,7 +8,7 @@
   },
   "source": {
     "includePattern": ".+\\.js(doc)?$",
-    "excludePattern": ""
+    "excludePattern": "node_modules"
   },
   "templates": {
     "cleverLinks": true,
@@ -25,6 +25,7 @@
     "collapseSymbols": false,
     "inverseNav": true
   },
+  "plugins": ["plugins/markdown"],
   "opts": {
     "encoding": "utf8",
     "destination": "./build/docs",
