@@ -9,21 +9,56 @@ var uglify     = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 
 module.exports = function (gulp) {
+
   gulp.task('browserify:prod', function () {
-    doBrowserify('env');
+    doBrowserify('prod');
   });
 
   gulp.task('browserify:dev', function () {
     doBrowserify('dev');
   });
 
+  var options = {
+    entries: './src/js/main.js',
+  };
+
+  function sharedBrowserifyTransforms (bundler) {
+    // add shared browserify transforms here
+    // i.e. bundler.transform(babel);
+  }
+
+  function prodBrowserifyTransforms (bundler) {
+    // add prod specific browserify transforms here
+    // i.e. bundler.transform(babel);
+  }
+
+  function devBrowserifyTransforms (bundler) {
+    // add dev specific browserify transforms here
+    // i.e. bundler.transform(babel);
+  }
+
+  function sharedGulpTransforms (bundle) {
+    // add shared gulp transform here
+    // i.e. bundler.pipe(uglify())
+  }
+
+  function prodGulpTransforms (bundle) {
+    // only uglify for prod, so we keep variable names while developing
+    return bundle.pipe(uglify());
+  }
+
+  function devGulpTransforms (bundle) {
+    return bundle.pipe(
+      sourcemaps.init({
+        loadMaps: true // loads map from browserify file
+      })
+    );
+  }
+
   function doBrowserify (env) {
-// options for browserify
-    var options = {
-      entries: './src/js/main.js',
-      //  needed for sourcemaps
-      debug  : true
-    };
+    // needed for sourcemaps
+    options.debug = env === 'dev';
+
     var bundler = watchify(browserify(options));
 
     function bundle () {
@@ -31,26 +66,27 @@ module.exports = function (gulp) {
 
       bundle = bundle.on('error', gutil.log.bind(gutil, 'Browserify Error'))
         .pipe(source('main.js')) // output filename
-        .pipe(buffer())
-        .pipe(
-          sourcemaps.init({
-            loadMaps: true // loads map from browserify file
-          })
-        );
+        .pipe(buffer());
+
+      bundle = sharedGulpTransforms(bundle) || bundle;
 
       if (env === 'prod') {
-        // only minify for prod, so we keep variable names while developing
-        bundle = bundle.pipe(uglify())
+        bundle = prodGulpTransforms(bundle) || bundle;
+      } else if (env === 'dev') {
+        bundle = devGulpTransforms(bundle) || bundle;
       }
-
-      // Add gulp transforms here
 
       return bundle.pipe(sourcemaps.write('./')) // sourcemap directory
         .pipe(gulp.dest('./build/dst/js')); // output dir
     }
 
-    // add browserify transforms here
-    // i.e. bundler.transform(babel);
+    sharedBrowserifyTransforms();
+
+    if (env === 'prod') {
+      prodBrowserifyTransforms(bundler);
+    } else if (env === 'dev') {
+      devBrowserifyTransforms(bundler);
+    }
 
     bundler.on('update', bundle); // re-bundles the application when any of the (javascript (!!)) source files change
     bundler.on('log', gutil.log); // output build logs to terminal
