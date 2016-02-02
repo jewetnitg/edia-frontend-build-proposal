@@ -26,7 +26,7 @@
     "footer": "",
     "copyright": "EDIA 2016",
     "navType": "vertical",
-    "theme": "oblivion",
+    "theme": "paper",
     "linenums": true,
     "collapseSymbols": false,
     "inverseNav": true
@@ -37,7 +37,7 @@
   "opts": {
     "encoding": "utf8",
     "destination": "./build/docs",
-    "template": "./node_modules/jsdoc-oblivion/template",
+    "template": "./node_modules/ink-docstrap/template",
     "recurse": true,
     "readme": "./README.md",
     "tutorials": "./docs"

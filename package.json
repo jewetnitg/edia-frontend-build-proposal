@@ -38,6 +38,7 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
     "include-all": "^0.1.6",
+    "ink-docstrap": "^1.1.1",
     "jsdoc": "^3.4.0",
     "jsdoc-oblivion": "0.0.4",
     "karma": "^0.13.19",
