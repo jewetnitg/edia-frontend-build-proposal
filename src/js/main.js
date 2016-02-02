@@ -1,4 +1,5 @@
 var _ = require('lodash');
+var routerConfig = require('./config/router');
 
 /**
  *
@@ -7,9 +8,11 @@ var _ = require('lodash');
  */
 var superCoolApplication = {
   thisIsTheOnlyThingICanDo: function (value) {
+    console.log(routerConfig);
     return value;
   },
   someUntestedFunctionThatDoesTheExactSameThing: function (value) {
+    console.log(routerConfig);
     return value;
   }
 };
