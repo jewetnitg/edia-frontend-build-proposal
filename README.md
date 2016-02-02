@@ -3,11 +3,14 @@ A boilerplate for frontend projects based on gulp, browserify, karma, mocha and 
 
 # Installing
 Check out this repository using git, and run ```npm install``` in the root of the repository.
+Please note that you need to have nodejs installed on your system.
 
 # Building
 Building the project is done though gulp, to build the project run ```gulp build```.
 
 for more information on the build, please refer to the {@tutorial build} documentation.
+Please note that you need to have gulp installed globally (using ```npm i gulp -g```) for this to work,
+if you would like to run the build without having gulp installed globally, you can use the {@tutorial npm scripts} for this, as they use the local gulp executable.
 
 # Directory hierarchy
 The boilerplate directory hierarchy looks like this
@@ -27,9 +30,7 @@ The boilerplate directory hierarchy looks like this
           ./importer.less - main less file, this should import all required less files
         index.html - the index.html of the project, the entry point 
       ./tasks - gulp tasks
-        ./**.js
       ./docs - tutorials etc.
-        ./**/**.md
       ./build - automatically generated files, the built project and documentation
         ./coverage - coverage output
         ./docs - the generated documentation
