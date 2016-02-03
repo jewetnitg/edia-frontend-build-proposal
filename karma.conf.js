@@ -59,8 +59,7 @@ module.exports = function (config) {
 
 
       // experimental
-      preserveDescribeNesting: false, // folded suites stay folded
-      foldAll: false, // reports start folded (only with preserveDescribeNesting)
+      preserveDescribeNesting: false // folded suites stay folded
     },
 
     // test results reporter to use
