@@ -1,5 +1,6 @@
 var Dependo = require("dependo");
 var fs = require('fs');
+var mkdirp = require('mkdirp');
 
 module.exports = function (gulp) {
   /**
@@ -13,12 +14,18 @@ module.exports = function (gulp) {
       exclude: 'node_modules',
     });
 
-    fs.writeFile('./build/docs/dependency_graph.html', dependo.generateHtml(), function (err) {
+    mkdirp('./build/docs/', function (err) {
       if (err) {
-        throw new Error('Dependo failed to write file to disk.');
-      } else {
-        cb();
+        throw new Error('Dependo failed to ensure it\'s destination directory.');
       }
+      
+      fs.writeFile('./build/docs/dependency_graph.html', dependo.generateHtml(), function (err) {
+        if (err) {
+          throw new Error('Dependo failed to write file to disk.');
+        } else {
+          cb();
+        }
+      });
     });
   });
 };
