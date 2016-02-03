@@ -14,7 +14,7 @@ module.exports = function (gulp, plugins) {
    * @name jsdoc:watch
    * @memberof build.tasks
    */
-  gulp.task('jsdoc:watch', ['jsdoc', 'dependo'], function (cb) {
+  gulp.task('jsdoc:watch', ['jsdoc'], function (cb) {
     // we don't have to wait for watchers to be ready to continue gulping
     cb();
     gulp.watch('./(src|docs|tasks)/*.(js|md)', ['jsdoc']);

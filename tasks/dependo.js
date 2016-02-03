@@ -1,10 +1,24 @@
-var shell = require("gulp-shell");
+var Dependo = require("dependo");
+var fs = require('fs');
 
 module.exports = function (gulp) {
   /**
-   * Generates documentation using the local jsdoc binary.
-   * @name jsdoc
+   * Generates a dependency graph using the dependo npm package
+   * @name dependo
    * @memberof build.tasks
    */
-  return gulp.task('dependo', shell.task('./node_modules/.bin/dependo src -f cjs -x node_modules > ./build/docs/dependency_graph.html'));
+  return gulp.task('dependo', function (cb) {
+    var dependo = new Dependo('./src', {
+      format: 'cjs',
+      exclude: 'node_modules',
+    });
+
+    fs.writeFile('./build/docs/dependency_graph.html', dependo.generateHtml(), function (err) {
+      if (err) {
+        throw new Error('Dependo failed to write file to disk.');
+      } else {
+        cb();
+      }
+    });
+  });
 };
