@@ -54,7 +54,7 @@ The boilerplate directory hierarchy looks like this
  - testing using karma, mocha and chai
   
 # TODOs
-  - improve jsdoc and dependo tasks, do not to use gulp-shell, this should decrease build time
+  - improve jsdoc task, see if it is possible without using the local jsdoc binary, but by using the npm module.
   - choose frameworks and libraries
   - es5 vs. es6
   
