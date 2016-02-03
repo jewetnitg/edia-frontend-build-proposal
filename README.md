@@ -3,7 +3,7 @@ A boilerplate for frontend projects based on gulp, browserify, karma, mocha and 
 
 # Installing
 Check out this repository using git, and run ```npm install``` in the root of the repository.
-Please note that you need to have nodejs installed on your system.
+Please note that you need to have nodejs installed on your system!
 
 # Building
 Building the project is done though gulp, to build the project run ```gulp build```.

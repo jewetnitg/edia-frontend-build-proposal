@@ -39,9 +39,6 @@ var buildConfig = {
       // create documentation
       "jsdoc",
 
-      // create dependency graph
-      "dependo",
-
       // put the build in an archive
       "tar"
     ],
