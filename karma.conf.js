@@ -38,6 +38,7 @@ module.exports = function (config) {
     plugins: [
       'karma-spec-reporter',
       'karma-html-reporter',
+      'karma-junit-reporter',
       'karma-coverage',
       'karma-browserify',
       'karma-phantomjs-launcher',
@@ -68,7 +69,8 @@ module.exports = function (config) {
     reporters: [
       'spec',
       'html',
-      'coverage'
+      'coverage',
+      'junit'
     ],
 
     coverageReporter: {
@@ -101,6 +103,10 @@ module.exports = function (config) {
       ]
     },
 
+    junitReporter: {
+      outputDir: './build/junit',
+      outputFile: 'test-results.xml'
+    },
 
     // web server port
     port: 9876,
