@@ -54,12 +54,16 @@ The boilerplate directory hierarchy looks like this
  - testing using karma, mocha and chai
   
 # TODOs
-  - improve jsdoc task, see if it is possible without using the local jsdoc binary, by using the npm module (not sure if this is possible)
   - choose frameworks and libraries
   - es5 vs. es6
   
-# Possible improvements
- - Publish markdown documentation to confluence using the [confluence-api](https://www.npmjs.com/package/confluence-api) npm package, research whether the [confluence markdown plugin](https://marketplace.atlassian.com/plugins/org.swift.confluence.markdown/server/overview)  will allow us to achieve this. 
+# Gulp plugins to consider
+  - [gulp-autopolyfiller](https://github.com/azproduction/gulp-autopolyfiller) - Automatic and minimal polyfills for your code.
+  - [gulp-spritesmith](https://github.com/otouto/gulp-spritesmith) - Converting a set of images into a spritesheet and corresponding CSS variables.
+  
+# Other possible improvements
+ - Publish markdown documentation to Confluence using the [confluence-api](https://www.npmjs.com/package/confluence-api) npm package, research whether the [confluence markdown plugin](https://marketplace.atlassian.com/plugins/org.swift.confluence.markdown/server/overview)  will allow us to achieve this. 
    Also take a look at the [jsdoc-to-markdown](https://www.npmjs.com/package/jsdoc-to-markdown) npm module, which might allow us to publish jsdoc documentation to confluence as well.
-   Another approach might be to [configure confluence to serve static content](https://confluence.atlassian.com/display/CONFKB/How+to+Use+Confluence+to+Serve+Static+Content), and simply copy the generated documentation to confluence.
+   Another, easier / more realistic, approach might be to [configure confluence to serve static content](https://confluence.atlassian.com/display/CONFKB/How+to+Use+Confluence+to+Serve+Static+Content), and simply copy the generated documentation to Confluence.
  - the [jsdoc3Template](https://github.com/danyg/jsdoc3Template/wiki#screenshots) *might* be a better jsdoc template
+ - Integrate karma with jenkins, see [this](https://karma-runner.github.io/0.8/plus/Jenkins-CI.html) for more information on how to do this. 
