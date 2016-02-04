@@ -61,6 +61,7 @@
     "yargs": "^3.32.0"
   },
   "dependencies": {
-    "lodash": "^4.1.0"
+    "lodash": "^4.1.0",
+    "rlite-router": "^1.1.3"
   }
 }

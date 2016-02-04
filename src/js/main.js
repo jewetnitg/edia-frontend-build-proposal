@@ -1,20 +1,29 @@
 var _ = require('lodash');
-var routerConfig = require('./config/router');
+var router = require('./lib/singletons/router');
+var bootstrap = require('./config/bootstrap');
+
+router.on('error', function (data) {
+  console.log('Router error', data);
+});
 
 /**
- *
- * @name superCoolApplication
+ * The main file, the app, the entry point of the application.
+ * Starts the router, handles routes, runs bootstrap etc.
+ * @name app
  * @type Object
  */
-var superCoolApplication = {
-  thisIsTheOnlyThingICanDo: function (value) {
-    console.log(routerConfig);
-    return value;
-  },
-  someUntestedFunctionThatDoesTheExactSameThing: function (value) {
-    console.log(routerConfig);
-    return value;
+var app = {
+  start: function (cb) {
+    bootstrap(function () {
+      router.start();
+
+      if (typeof cb === 'function') {
+        cb();
+      }
+    });
   }
 };
 
-module.exports = superCoolApplication;
+app.start();
+
+module.exports = app;
