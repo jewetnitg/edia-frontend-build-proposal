@@ -1,17 +1,12 @@
-import main from './js/main';
-
+var main_1 = require('../src/js/main');
+var chai_1 = require('chai');
 describe('some module', function () {
-
-  describe('some feature', function () {
-
-    it('should return whatever value is passed in', function (done) {
-      var value = {};
-      var returnValue = superCoolApplication.thisIsTheOnlyThingICanDo(value);
-
-      expect(returnValue).to.equal(value);
-      done();
+    describe('some feature', function () {
+        it('should do whatever fuck it', function (done) {
+            main_1["default"].start();
+            chai_1.expect("TOPKEK").to.equal("TOPKEK");
+            done();
+        });
     });
-
-  });
-
 });
+//# sourceMappingURL=example.spec.js.map

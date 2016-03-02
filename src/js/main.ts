@@ -2,6 +2,7 @@
 
 // for modules with no default export
 import * as _ from 'lodash';
+import {Promise} from 'es6-promise';
 import bootstrap from './config/bootstrap';
 
 /**
@@ -14,8 +15,11 @@ var app = {
   /**
    * Starts the application
    */
-  start() : Promise {
+  start() : Promise<any> {
     return bootstrap();
+  },
+  stop() : Promise<any> {
+    return Promise.resolve();
   }
 };
 

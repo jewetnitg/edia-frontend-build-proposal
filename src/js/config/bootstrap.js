@@ -1,5 +1,6 @@
+var es6_promise_1 = require('es6-promise');
 function bootstrap() {
-    return new Promise(function (resolve, reject) {
+    return new es6_promise_1.Promise(function (resolve, reject) {
         resolve();
     });
 }

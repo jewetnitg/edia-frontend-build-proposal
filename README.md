@@ -22,7 +22,7 @@ The boilerplate directory hierarchy looks like this
 |       +-- config
 |       +-- api
 |       +-- lib
-|       +-- main.js // the javascript entry point
+|       +-- main.ts // the typescript entry point
 |   +-- templates // templates, (react / handlebars / ...)
 |   +-- fonts // font files
 |   +-- images // image files
@@ -37,6 +37,8 @@ The boilerplate directory hierarchy looks like this
 |   +-- dst // the built project
 |   +-- build.tar.gz // the ./build/dst directory, put in an archive
 +-- package.json // configuration for the projects dependencies
++-- tsconfig.json // configuration for typescript
++-- typings.json // configuration for typings, the package json for typings
 +-- karma.conf.js // configuration for karma, the test runner
 +-- build.config.js // configuration for the gulp build
 +-- jsdoc.conf.json // configuration for generation of documentation

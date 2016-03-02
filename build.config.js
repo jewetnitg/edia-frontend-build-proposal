@@ -33,6 +33,9 @@ var buildConfig = {
       // run tests once
       "test",
 
+      // generate properly sourcemapped coverage
+      "coverage",
+
       // run browserify
       "browserify:prod",
 

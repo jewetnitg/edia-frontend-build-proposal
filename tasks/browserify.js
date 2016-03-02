@@ -8,6 +8,7 @@ var gutil      = require('gulp-util');
 var uglify     = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var tsify      = require('tsify');
+var packageJson = require('../package.json');
 
 module.exports = function (gulp) {
 
@@ -29,10 +30,7 @@ module.exports = function (gulp) {
     doBrowserify('dev');
   });
 
-  // @todo use config from package.json
-  var options = {
-    entries: './src/js/main.ts',
-  };
+  var options = packageJson.browserify;
 
   function sharedBrowserifyTransforms (bundler) {
     // add shared browserify transforms here
