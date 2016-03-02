@@ -5,7 +5,7 @@ module.exports = function (gulp) {
    * @memberof build.tasks
    */
   gulp.task('copy', function () {
-    return gulp.src(['./src/**/**.!(js|less|sass)'])
+    return gulp.src(['./src/**/**.!(js|ts|less|sass)'])
       .pipe(gulp.dest('build/dst'));
   });
 };

@@ -26,24 +26,38 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['coverage'],
-      'test/**/*.spec.js': ['browserify']
+      '**/*.ts': ['typescript'],
+      'src/**/*.(js|ts)': ['coverage'],
+      'test/**/*.spec.(js|ts)': ['browserify']
     },
 
     browserify: {
       debug: true,
+      plugin: ['tsify'],
       transform: [require('browserify-istanbul')]
     },
 
     plugins: [
+      // preprocessors
+      'karma-typescript-preprocessor',
+
+      // reporters
       'karma-spec-reporter',
       'karma-html-reporter',
       'karma-junit-reporter',
+
+      // coverage
       'karma-coverage',
+
+      // browserify
       'karma-browserify',
+
+      // launchers
       'karma-phantomjs-launcher',
       'karma-chrome-launcher',
       'karma-firefox-launcher',
+
+      // frameworks / libraries
       'karma-mocha',
       'karma-chai'
     ],
@@ -56,7 +70,6 @@ module.exports = function (config) {
       pageTitle: null, // page title for reports; browser info by default
       urlFriendlyName: false, // simply replaces spaces with _ for files/dirs
       reportName: 'test-summary', // report summary filename; browser info by default
-
 
       // experimental
       preserveDescribeNesting: false // folded suites stay folded

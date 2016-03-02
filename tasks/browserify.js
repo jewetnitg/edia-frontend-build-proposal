@@ -7,6 +7,7 @@ var buffer     = require('vinyl-buffer');
 var gutil      = require('gulp-util');
 var uglify     = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
+var tsify      = require('tsify');
 
 module.exports = function (gulp) {
 
@@ -28,13 +29,15 @@ module.exports = function (gulp) {
     doBrowserify('dev');
   });
 
+  // @todo use config from package.json
   var options = {
-    entries: './src/js/main.js',
+    entries: './src/js/main.ts',
   };
 
   function sharedBrowserifyTransforms (bundler) {
     // add shared browserify transforms here
     // i.e. bundler.transform(babel);
+    bundler.plugin(tsify);
   }
 
   function prodBrowserifyTransforms (bundler) {
@@ -71,6 +74,8 @@ module.exports = function (gulp) {
 
     var bundler = watchify(browserify(options));
 
+    sharedBrowserifyTransforms(bundler);
+
     function bundle () {
       var bundle = bundler.bundle();
 
@@ -89,8 +94,6 @@ module.exports = function (gulp) {
       return bundle.pipe(sourcemaps.write('./')) // sourcemap directory
         .pipe(gulp.dest('./build/dst/js')); // output dir
     }
-
-    sharedBrowserifyTransforms();
 
     if (env === 'prod') {
       prodBrowserifyTransforms(bundler);

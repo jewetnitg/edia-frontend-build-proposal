@@ -10,6 +10,12 @@
     "dev": "./node_modules/.bin/gulp dev",
     "docs": "./node_modules/.bin/gulp jsdoc"
   },
+  "browserify": {
+    "entries": "./src/main.ts",
+    "plugins": [
+      "tsfy"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://jewetnitg@github.com/jewetnitg/edia-frontend-build-proposal.git"
@@ -52,9 +58,11 @@
     "karma-mocha": "^0.2.1",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.23",
+    "karma-typescript-preprocessor": "0.0.21",
     "mkdirp": "^0.5.1",
     "mocha": "^2.4.5",
     "run-sequence": "^1.1.5",
+    "tsify": "^0.13.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0",

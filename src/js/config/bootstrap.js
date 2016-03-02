@@ -1,4 +1,8 @@
-module.exports = function bootstrap(cb) {
-  // be sure to call this when you are done or the application won't start.
-  cb();
-};
+function bootstrap() {
+    return new Promise(function (resolve, reject) {
+        resolve();
+    });
+}
+exports["default"] = bootstrap;
+;
+//# sourceMappingURL=bootstrap.js.map

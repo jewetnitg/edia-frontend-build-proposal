@@ -1,4 +1,4 @@
-var superCoolApplication = require('../src/js/main');
+import main from './js/main';
 
 describe('some module', function () {
 
