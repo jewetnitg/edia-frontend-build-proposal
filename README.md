@@ -1,9 +1,13 @@
-# edia-frontend-build-proposal
+# edia-frontend-typescript
 A boilerplate for frontend projects based on gulp, browserify, karma, mocha and chai. Intended as a candidate for the frontend boilerplate for future EDIA projects.
 
 # Installing
 Check out this repository using git, and run ```npm install``` in the root of the repository.
 Please note that you need to have nodejs installed on your system!
+
+# Development
+Developing the project is best done by using the gulp dev task.
+This task provides a devserver with livereload, just change code and your page will automatically reload
 
 # Building
 Building the project is done though gulp, to build the project run ```gulp build```.

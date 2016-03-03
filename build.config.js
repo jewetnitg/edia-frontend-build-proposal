@@ -40,7 +40,7 @@ var buildConfig = {
       "browserify:prod",
 
       // create documentation
-      "jsdoc",
+      "typedoc",
 
       // put the build in an archive
       "tar"

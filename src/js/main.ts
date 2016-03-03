@@ -1,28 +1,14 @@
 /// <reference path="../../typings/main.d.ts" />
 
-// for modules with no default export
-import * as _ from 'lodash';
-import {Promise} from 'es6-promise';
-import bootstrap from './config/bootstrap';
+import Application from './lib/classes/Application';
 
 /**
  * The main file, the app, the entry point of the application.
  * Starts the router, handles routes, runs bootstrap etc.
  * @name app
- * @type Object
  */
-var app = {
-  /**
-   * Starts the application
-   */
-  start() : Promise<any> {
-    return bootstrap();
-  },
-  stop() : Promise<any> {
-    return Promise.resolve();
-  }
-};
+const application : Application = new Application();
 
-app.start();
+application.start();
 
-export default app;
+export default application;

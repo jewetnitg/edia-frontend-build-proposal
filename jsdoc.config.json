@@ -16,6 +16,15 @@
       "tasks"
     ]
   },
+  "tsdoc": {
+    "source": "./src/js",
+    "destination": "./build/tsdocs",
+    "systemName": "TypeScript boilerplate}",
+    "footer": "",
+    "copyright": "EDIA 2016}",
+    "outputSourceFiles": true,
+    "commentsOnly": true
+  },
   "templates": {
     "cleverLinks": true,
     "monospaceLinks": false,
