@@ -1,14 +1,12 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "noImplicitAny": true
-  },
-  "compilerOptions": {
     "watch": true,
     "module":"commonjs",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
+    "experimentalDecorators": true,
     "sourceMap": true
   },
   "exclude": [

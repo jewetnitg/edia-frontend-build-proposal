@@ -8,7 +8,7 @@ import IApplication from '../interfaces/IApplication.ts';
 export class Application implements IApplication {
 
   public start() : Promise<any> {
-    return bootstrap();
+    return bootstrap(this);
   }
 
   public stop() : Promise<any> {

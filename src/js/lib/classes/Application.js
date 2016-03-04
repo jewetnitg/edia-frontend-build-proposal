@@ -4,7 +4,7 @@ var Application = (function () {
     function Application() {
     }
     Application.prototype.start = function () {
-        return bootstrap_1["default"]();
+        return bootstrap_1["default"](this);
     };
     Application.prototype.stop = function () {
         return es6_promise_1.Promise.resolve();
